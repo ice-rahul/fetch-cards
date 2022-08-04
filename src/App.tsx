@@ -1,34 +1,56 @@
-import React from 'react';
+import React from 'react'
 
 import AppWrapper from './components/App'
 import Header from './components/Header'
-import Section from './components/Section';
-import Footer from './components/Footer';
-import CharacterCard from './components/CharacterCard';
-import { useCharacterQuery } from './graphql/types';
+import Section from './components/Section'
+import Footer from './components/Footer'
+import CharacterCard from './components/CharacterCard'
+import { useCharactersQuery } from './graphql/types'
+
+const SubApp = ({currentPage}: {currentPage: number}) => {
+  const { data } = useCharactersQuery({
+    variables: {
+      page: currentPage,
+    },
+  })
+
+  if (!data || !data.characters) return <div style={{flex: '1'}} />
+
+  return (
+    <>
+      <Section>
+        {data?.characters?.results?.map(
+          (val) => val && <CharacterCard character={val} key={val.id} />,
+        )}
+      </Section>
+    </>
+  )
+}
 
 const App = () => {
+  const [currentPage, setCurrentPage] = React.useState(1);
 
-  // 3) REPLACE THIS HOOK WITH A `useCharactersQuery` HOOK
+  const handlePreviousPage = () => {
+    currentPage > 1 && setCurrentPage(currentPage - 1)
+  }
 
-  const { data } = useCharacterQuery({variables: {
-    id: "1"
-  }})
-
-  if (!data || !data.character) return null
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1)
+  }
 
   return (
     <AppWrapper>
       <Header>
         <span>Rick and Morty Character Card Info</span>
       </Header>
-      <Section>
-        {/* 4) ITERATE THROUGH THE NEW CHARACTERS DATA AND DISPLAY CARDS FOR EACH CHARACTER */}
-        <CharacterCard character={data.character} />
+      <Section style={{paddingTop: '10px', gap: '10px'}}>
+        <button onClick={handlePreviousPage} style={{height: 'max-content'}}>{`<< Prev`}</button>
+        <button onClick={handleNextPage} style={{height: 'max-content'}}>{`Next >>`}</button>
       </Section>
+      <SubApp currentPage={currentPage} />
       <Footer />
     </AppWrapper>
-  );
+  )
 }
 
-export default App;
+export default App

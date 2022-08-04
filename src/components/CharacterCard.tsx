@@ -26,8 +26,8 @@ const Image = styled.img`
 
 const CharacterCard = ({ character }: CharacterCardProps) => {
     return <Wrapper>
-        <Image src={character.image || ''} alt="icon" className="avatar" />
-        {character.name}
+        <Image src={character.image || ''} alt="icon" className="avatar" loading='lazy' />
+        <span style={{padding: '0px 10px', textAlign: 'center'}}>{character.name}</span>
     </Wrapper>
 }
 

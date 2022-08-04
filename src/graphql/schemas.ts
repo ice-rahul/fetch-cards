@@ -1,16 +1,37 @@
 import { gql } from "@apollo/client";
 
-export const CHARACTER_QUERY = gql`
+const CHARACTER_QUERY = gql`
     query Character($id: ID!) {
         character(id: $id) {
             id
             name
             image
+            species
+            gender
         }
     }
-`
+`;
 
-// 1) ADD A CHARACTERS_QUERY SCHEMA HERE
+const CHARACTERS_QUERY = gql`
+    query Characters($page: Int!) {
+        characters(page: $page) {
+            results {
+                id
+                name
+                image
+            }
+            info {
+                count,
+                pages,
+                next,
+                prev
+            }
+        }
+    }
+`;
 
-// 2) RUN `npm run generate` TO GENERATE
-// THE NEW HOOKS AND TYPINGS CREATED FOR THE NEW SCHEMA
+
+export {
+    CHARACTER_QUERY,
+    CHARACTERS_QUERY
+}
