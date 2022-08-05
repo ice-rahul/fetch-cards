@@ -5,30 +5,37 @@ import Header from './components/Header'
 import Section from './components/Section'
 import Footer from './components/Footer'
 import CharacterCard from './components/CharacterCard'
+import PlaceHolder from './components/PlaceHolder'
 import { useCharactersQuery } from './graphql/types'
 
-const SubApp = ({currentPage}: {currentPage: number}) => {
-  const { data } = useCharactersQuery({
+const CardsContainer = ({ currentPage }: { currentPage: number }) => {
+  const { data, loading } = useCharactersQuery({
     variables: {
       page: currentPage,
     },
   })
 
-  if (!data || !data.characters) return <div style={{flex: '1'}} />
+  if (loading) {
+    return (
+      <Section>
+        <PlaceHolder />
+      </Section>
+    )
+  }
+
+  if (!data || !data.characters) return <div className="emptyBody" />
 
   return (
-    <>
-      <Section>
-        {data?.characters?.results?.map(
-          (val) => val && <CharacterCard character={val} key={val.id} />,
-        )}
-      </Section>
-    </>
+    <Section>
+      {data?.characters?.results?.map(
+        (val) => val && <CharacterCard character={val} key={val.id} />,
+      )}
+    </Section>
   )
 }
 
 const App = () => {
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = React.useState(1)
 
   const handlePreviousPage = () => {
     currentPage > 1 && setCurrentPage(currentPage - 1)
@@ -43,12 +50,17 @@ const App = () => {
       <Header>
         <span>Rick and Morty Character Card Info</span>
       </Header>
-      <Section style={{paddingTop: '10px', gap: '10px'}}>
-        <button onClick={handlePreviousPage} style={{height: 'max-content'}}>{`<< Prev`}</button>
-        <button onClick={handleNextPage} style={{height: 'max-content'}}>{`Next >>`}</button>
+      <Section className="paginationContainer">
+        <button onClick={handlePreviousPage} className="navigationButtons">
+          <span>{`<< Prev`}</span>
+        </button>
+        <input className="searchText" placeholder="Search Characters" />
+        <button onClick={handleNextPage} className="navigationButtons">
+          <span>{`Next >>`}</span>
+        </button>
       </Section>
-      <SubApp currentPage={currentPage} />
-      <Footer />
+      <CardsContainer currentPage={currentPage} />
+      <Footer>Made with &#x1F90D; by Rahul Agrawal</Footer>
     </AppWrapper>
   )
 }

@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   border: solid grey 1px;
   width: 200px;
   height: 200px;
+  box-shadow: 2px 4px 10px #ccc;
 `
 
 const Image = styled.img`
@@ -27,7 +28,7 @@ const Image = styled.img`
 const CharacterCard = ({ character }: CharacterCardProps) => {
     return <Wrapper>
         <Image src={character.image || ''} alt="icon" className="avatar" loading='lazy' />
-        <span style={{padding: '0px 10px', textAlign: 'center'}}>{character.name}</span>
+        <span className="characterCardLabel" >{character.name}</span>
     </Wrapper>
 }
 

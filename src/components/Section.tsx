@@ -5,6 +5,7 @@ const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 10px;
 `
 
 export default Section;

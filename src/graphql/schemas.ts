@@ -13,8 +13,8 @@ const CHARACTER_QUERY = gql`
 `;
 
 const CHARACTERS_QUERY = gql`
-    query Characters($page: Int!) {
-        characters(page: $page) {
+    query Characters($page: Int = 1, $filter: FilterCharacter = {}) {
+        characters(page: $page, filter: $filter) {
             results {
                 id
                 name
