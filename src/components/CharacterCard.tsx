@@ -18,11 +18,31 @@ const Wrapper = styled.div`
   width: 200px;
   height: 200px;
   box-shadow: 2px 4px 10px #ccc;
+  @media (max-width: 600px) {
+    height: 150px;
+    width: 150px;
+  }
+  @media (max-width: 336px) {
+   width: 140px; 
+  }
+
+  @media (max-width: 320px) {
+    width: 120px; 
+  }
 `
 
 const Image = styled.img`
- height: 150px;
+  height: 150px;
   width: 150px;
+  @media (max-width: 600px) {
+    height: 100px;
+    width: 100px;
+  }
+
+  @media (max-width: 320px) {
+    height: 80px;
+    width: 80px;
+  }
 `
 
 const CharacterCard = ({ character }: CharacterCardProps) => {

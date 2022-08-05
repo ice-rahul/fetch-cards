@@ -27,7 +27,6 @@ code {
   height: max-content;
   cursor: pointer;
   border-radius: 3px;
-  padding: 8px 0px;
   color: white;
   overflow: hidden;
 }
@@ -68,6 +67,7 @@ code {
   background: #282c34;
   position: relative;
   z-index: 1;
+  display: block;
 }
 
 .navigationButtons > span:hover {
@@ -85,6 +85,31 @@ code {
 .characterCardLabel {
   padding: 0px 10px;
   text-align: center
+}
+
+@media (max-width: 600px) {
+  .characterCardLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .navigationButtons {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .navigationButtons > span {
+    text-align: center;
+  }
+
+  .searchText {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
 }
 
 .emptyBody {
