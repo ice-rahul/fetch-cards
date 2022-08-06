@@ -1,16 +1,17 @@
 import React from 'react'
-
-import AppWrapper from './components/App'
-import Header from './components/Header'
-import Section from './components/Section'
-import Footer from './components/Footer'
-import CardsContainer from './components/CardsContainer'
-import useDebounce from './util/useDebounce'
+import {
+  App as AppWrapper,
+  Header,
+  Section,
+  Footer,
+  CardsContainer,
+} from './components'
 import { Characters } from './graphql/types'
+import useDebounce from './util/useDebounce'
 
 const App = () => {
   const [currentPage, setCurrentPage] = React.useState(1)
-  const [pageInfo, setPageInfo] = React.useState<Pick<Characters, "info">>()
+  const [pageInfo, setPageInfo] = React.useState<Pick<Characters, 'info'>>()
   const [inputText, setInputText] = React.useState('')
   const { result } = useDebounce(inputText)
 
@@ -19,13 +20,13 @@ const App = () => {
   }, [result])
 
   const handlePreviousPage = () => {
-    if(!!pageInfo?.info?.prev) {
+    if (!!pageInfo?.info?.prev) {
       setCurrentPage(pageInfo?.info?.prev)
     }
   }
 
   const handleNextPage = () => {
-    if(!!pageInfo?.info?.next) {
+    if (!!pageInfo?.info?.next) {
       setCurrentPage(pageInfo?.info?.next)
     }
   }

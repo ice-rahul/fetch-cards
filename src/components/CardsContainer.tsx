@@ -1,9 +1,6 @@
 import React from 'react'
-import CharacterCard from './CharacterCard'
-import PlaceHolder from './PlaceHolder'
-import Section from './Section'
-import { Characters } from '../graphql/types'
-import { useCharactersQuery } from '../graphql/types'
+import { CharacterCard, Placeholder, Section } from './index'
+import { useCharactersQuery, Characters } from '../graphql/types'
 
 const CardsContainer = ({
   currentPage,
@@ -28,7 +25,7 @@ const CardsContainer = ({
   if (loading) {
     return (
       <Section>
-        <PlaceHolder />
+        <Placeholder />
       </Section>
     )
   }
