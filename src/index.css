@@ -18,7 +18,7 @@ code {
 
 .paginationContainer {
   padding-top: 10px;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .navigationButtons {
@@ -34,11 +34,18 @@ code {
 .navigationButtons:before {
   content: '';
   position: absolute;
-  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+  background: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
   top: 0;
   left: 0;
   bottom: 0;
-  width: 200%; 
+  width: 200%;
   background-size: 50% 100%;
 }
 
@@ -72,7 +79,7 @@ code {
 
 .navigationButtons > span:hover {
   background: #404652;
-} 
+}
 
 .searchText {
   height: max-content;
@@ -84,7 +91,7 @@ code {
 
 .characterCardLabel {
   padding: 0px 10px;
-  text-align: center
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -109,7 +116,6 @@ code {
     margin-left: 10px;
     margin-right: 10px;
   }
-
 }
 
 .emptyBody {

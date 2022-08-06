@@ -230,7 +230,7 @@ export type CharactersQuery = (
     { __typename?: 'Characters' }
     & { results?: Maybe<Array<Maybe<(
       { __typename?: 'Character' }
-      & Pick<Character, 'id' | 'name' | 'image'>
+      & Pick<Character, 'id' | 'name' | 'image' | 'status' | 'species' | 'gender' | 'type'>
     )>>>, info?: Maybe<(
       { __typename?: 'Info' }
       & Pick<Info, 'count' | 'pages' | 'next' | 'prev'>
@@ -285,6 +285,10 @@ export const CharactersDocument = gql`
       id
       name
       image
+      status
+      species
+      gender
+      type
     }
     info {
       count

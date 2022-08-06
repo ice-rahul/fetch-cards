@@ -2,14 +2,17 @@ import React from 'react'
 import CharacterCard from './CharacterCard'
 import PlaceHolder from './PlaceHolder'
 import Section from './Section'
+import { Characters } from '../graphql/types'
 import { useCharactersQuery } from '../graphql/types'
 
 const CardsContainer = ({
   currentPage,
   filterText,
+  pageInfo,
 }: {
   currentPage: number
   filterText: string
+  pageInfo?: (info: Pick<Characters, 'info'>) => void
 }) => {
   const { data, loading } = useCharactersQuery({
     variables: {
@@ -17,6 +20,10 @@ const CardsContainer = ({
       filter: { name: filterText },
     },
   })
+
+  React.useEffect(() => {
+    !!data?.characters?.info && pageInfo?.({ info: data?.characters?.info })
+  }, [data, pageInfo])
 
   if (loading) {
     return (

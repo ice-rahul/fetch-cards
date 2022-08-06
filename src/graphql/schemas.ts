@@ -19,6 +19,10 @@ const CHARACTERS_QUERY = gql`
                 id
                 name
                 image
+                status,
+                species,
+                gender,
+                type
             }
             info {
                 count,
