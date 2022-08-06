@@ -121,3 +121,16 @@ code {
 .emptyBody {
   flex: 1;
 }
+
+.imageWrapper {
+  position: relative;
+}
+
+.genderWrapper {
+  position: absolute;
+  bottom: 0;
+  background: white;
+  borderRadius: 0 3px;
+  padding: 5px 5px 0 0;
+  cursor: pointer;
+}

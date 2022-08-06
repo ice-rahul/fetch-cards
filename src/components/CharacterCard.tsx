@@ -37,7 +37,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
 
   return (
     <Wrapper>
-      <div style={{ position: 'relative' }}>
+      <div className="imageWrapper">
         <Image
           src={character.image || ''}
           alt="icon"
@@ -45,14 +45,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
           loading="lazy"
         />
         <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            background: 'white',
-            borderRadius: '0 3px',
-            padding: '5px 5px 0 0',
-            cursor: 'pointer',
-          }}
+          className="genderWrapper"
           title={character.gender || ''}
         >
           {getGender()}
