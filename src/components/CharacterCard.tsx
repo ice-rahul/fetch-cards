@@ -8,7 +8,7 @@ type CharacterCardProps = {
 
 
 const Wrapper = styled.div`
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   border: solid grey 1px;
   width: 200px;
   height: 200px;
+  border-radius: 3px;
   box-shadow: 2px 4px 10px #ccc;
   @media (max-width: 600px) {
     height: 150px;
@@ -34,6 +35,7 @@ const Wrapper = styled.div`
 const Image = styled.img`
   height: 150px;
   width: 150px;
+  border-radius: 3px;
   @media (max-width: 600px) {
     height: 100px;
     width: 100px;

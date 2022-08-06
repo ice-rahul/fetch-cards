@@ -4,7 +4,7 @@ import CharacterCard from './CharacterCard'
 function PlaceHolder() {
   const character = {
     name: 'Loading...',
-    image: 'https://via.placeholder.com/150',
+    image: 'https://dummyimage.com/150x150/cccccc/fff&text=Loading...',
   }
   return (
     <>
