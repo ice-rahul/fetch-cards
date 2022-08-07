@@ -34,3 +34,7 @@ Fetch Cards - It is a simple create react application which fetches the card usi
 
 # Screenshots
 
+<kbd>![Screenshot 2022-08-07 at 3 56 07 PM](https://user-images.githubusercontent.com/22559660/183286591-94b963fb-97e7-4748-a6e6-730d345f5577.png)</kbd>
+
+<kbd>![Screenshot 2022-08-07 at 3 57 03 PM](https://user-images.githubusercontent.com/22559660/183286596-c54bf127-c25f-4d6f-a9ce-414e231d7f49.png)</kbd>
+
