@@ -38,3 +38,12 @@ Fetch Cards - It is a simple create react application which fetches the card usi
 
 <kbd>![Screenshot 2022-08-07 at 3 57 03 PM](https://user-images.githubusercontent.com/22559660/183286596-c54bf127-c25f-4d6f-a9ce-414e231d7f49.png)</kbd>
 
+# Reference
+
+There is a lot of potential in the extensibility of this project.
+
+I created a similar project in the past but with a partially similar tech stack. The details for the same is
+
+Github: [https://github.com/ice-rahul/giphy-search](https://github.com/ice-rahul/giphy-search)
+
+URL: [https://mygiphy-search.netlify.app](https://mygiphy-search.netlify.app)
