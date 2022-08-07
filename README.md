@@ -3,7 +3,7 @@
 
 # Introduction
 
-Fetch Cards - It is a simple create react application which fetches the card using apollo graphql client
+[Fetch Cards](https://fetch-cards.vercel.app/) - It is a simple create react application which fetches the card using apollo graphql client
 
 # Requirements
 1. Create a new schema object that will hit the `characters` API instead of the `character`
@@ -47,3 +47,5 @@ I created a similar project in the past but with a partially similar tech stack.
 Github: [https://github.com/ice-rahul/giphy-search](https://github.com/ice-rahul/giphy-search)
 
 URL: [https://mygiphy-search.netlify.app](https://mygiphy-search.netlify.app)
+
+### Note: The above project is quite old and image fallback could have been handled in a better way 
