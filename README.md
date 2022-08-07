@@ -48,4 +48,4 @@ Github: [https://github.com/ice-rahul/giphy-search](https://github.com/ice-rahul
 
 URL: [https://mygiphy-search.netlify.app](https://mygiphy-search.netlify.app)
 
-### Note: The above project is quite old and image fallback could have been handled in a better way 
+#### Note: The above project (giphy-search) is quite old and image fallback could have been handled in a better way 
