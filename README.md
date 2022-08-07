@@ -40,7 +40,7 @@
 
 # Reference
 
-There is a lot of potential in the extensibility of this project.
+I have just tried to cover the MVP of the project. There is a lot of potential in the extensibility of this project.
 
 I created a similar project in the past but with a partially similar tech stack. The details for the same is
 
